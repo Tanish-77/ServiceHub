@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./ProviderDashboard.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ProviderDashboard() {
 
   const [bookings, setBookings] = useState([]);
@@ -79,7 +81,7 @@ function ProviderDashboard() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/providers"
+        `${API_URL}/api/providers`
       );
 
       const data = await response.json();

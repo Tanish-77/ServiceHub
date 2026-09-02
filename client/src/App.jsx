@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
 
   
@@ -47,7 +49,7 @@ const [bookingData, setBookingData] = useState({
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/")
+    fetch(`${API_URL}/`)
       .then((response) => response.json())
       .then((data) => {
         setMessage(data.message);
@@ -57,7 +59,7 @@ const [bookingData, setBookingData] = useState({
       });
 
 
-    fetch("http://localhost:5000/api/providers")
+    fetch(`${API_URL}/api/providers`)
       .then((response) => response.json())
       .then((data) => {
         setProviders(data);
@@ -185,7 +187,7 @@ const [bookingData, setBookingData] = useState({
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/reviews",
+        `${API_URL}/api/reviews`,
         {
           method: "POST",
 
@@ -371,7 +373,7 @@ const [bookingData, setBookingData] = useState({
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/bookings",
+        `${API_URL}/api/bookings`,
         {
           method: "POST",
 
@@ -486,7 +488,7 @@ const [bookingData, setBookingData] = useState({
 
               const verifyResponse =
                 await fetch(
-                  "http://localhost:5000/api/bookings/payment/verify",
+                  `${API_URL}/api/bookings/payment/verify`,
                   {
                     method: "POST",
 
@@ -637,7 +639,7 @@ const [bookingData, setBookingData] = useState({
   try {
 
     const response = await fetch(
-      `http://localhost:5000/api/bookings?customerPhone=${customerPhone}`
+      `${API_URL}/api/bookings?customerPhone=${customerPhone}`
     );
 
     const data = await response.json();
@@ -689,7 +691,7 @@ const [bookingData, setBookingData] = useState({
 
         const response =
           await fetch(
-            `http://localhost:5000/api/bookings/${bookingId}/cancel`,
+            `${API_URL}/api/bookings/${bookingId}/cancel`,
             {
               method: "PUT"
             }
@@ -717,7 +719,7 @@ const [bookingData, setBookingData] = useState({
 
         const updatedResponse =
           await fetch(
-          `http://localhost:5000/api/bookings?customerPhone=${customerPhone}`
+          `${API_URL}/api/bookings?customerPhone=${customerPhone}`
           );
 
 

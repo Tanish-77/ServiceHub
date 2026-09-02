@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import "./Providers.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Providers() {
   const [providers, setProviders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ function Providers() {
   // =========================================
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/providers")
+    fetch(`${API_URL}/api/providers`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch providers");

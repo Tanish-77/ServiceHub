@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./Admin.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Admin() {
 
   // =========================================
@@ -57,7 +59,7 @@ function Admin() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/bookings"
+        `${API_URL}/api/bookings`
       );
 
       const data = await response.json();
@@ -95,7 +97,7 @@ function Admin() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/providers"
+        `${API_URL}/api/providers`
       );
 
       const data = await response.json();
@@ -151,7 +153,7 @@ function Admin() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/bookings/${bookingId}/status`,
+        `${API_URL}/api/bookings/${bookingId}/status`,
         {
           method: "PUT",
 
@@ -276,8 +278,8 @@ function Admin() {
     try {
 
       const url = editingProvider
-        ? `http://localhost:5000/api/providers/${editingProvider._id}`
-        : "http://localhost:5000/api/providers";
+         ? `${API_URL}/api/providers/${editingProvider._id}`
+         : `${API_URL}/api/providers`;
 
       const method = editingProvider
         ? "PUT"
@@ -377,7 +379,7 @@ function Admin() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/providers/${providerId}`,
+       `${API_URL}/api/providers/${providerId}`,
         {
           method: "DELETE"
         }
