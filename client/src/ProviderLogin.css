@@ -1,0 +1,522 @@
+/* =========================================
+   PROVIDER LOGIN PAGE
+========================================= */
+
+.provider-login-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 20px;
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(16, 185, 129, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(59, 130, 246, 0.2),
+      transparent 32%
+    ),
+    #06111f;
+}
+
+
+/* =========================================
+   BACKGROUND GRID
+========================================= */
+
+.provider-login-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.2)
+  );
+
+  animation: providerGrid 15s linear infinite;
+}
+
+
+@keyframes providerGrid {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(45px);
+  }
+}
+
+
+/* =========================================
+   GLOWING BACKGROUND CIRCLE
+========================================= */
+
+.provider-login-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(52, 211, 153, 0.12);
+
+  box-shadow:
+    0 0 80px rgba(16, 185, 129, 0.08);
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  animation: providerRing 6s ease-in-out infinite;
+}
+
+
+@keyframes providerRing {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.15);
+  }
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.provider-login-card {
+  width: 100%;
+  max-width: 440px;
+
+  position: relative;
+  z-index: 5;
+
+  padding: 42px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 31, 48, 0.94),
+      rgba(8, 22, 36, 0.9)
+    );
+
+  border: 1px solid rgba(148, 163, 184, 0.16);
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  animation: providerCardIn 0.8s ease forwards;
+}
+
+
+@keyframes providerCardIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   TOP ACCENT
+========================================= */
+
+.provider-login-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+
+  width: 70%;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #34d399,
+      #60a5fa,
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(52, 211, 153, 0.6);
+}
+
+
+/* =========================================
+   PROVIDER ICON
+========================================= */
+
+.provider-login-icon {
+
+  width: 86px;
+  height: 86px;
+
+  margin: 0 auto 23px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+  font-size: 39px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.18),
+      rgba(59, 130, 246, 0.2)
+    );
+
+  border: 1px solid rgba(52, 211, 153, 0.2);
+
+  box-shadow:
+    0 15px 35px rgba(16, 185, 129, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  animation: providerIcon 4s ease-in-out infinite;
+}
+
+
+@keyframes providerIcon {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(-3deg);
+  }
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.provider-login-card h1 {
+
+  margin: 0 0 9px;
+
+  color: #f8fafc;
+
+  font-size: 31px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.provider-login-subtitle {
+
+  margin: 0 0 32px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.provider-login-card form {
+  text-align: left;
+}
+
+
+.provider-login-card label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.provider-login-card input {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  margin-bottom: 21px;
+
+  outline: none;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.22);
+
+  background: #071522;
+
+  color: #f8fafc;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.provider-login-card input::placeholder {
+  color: #64748b;
+}
+
+
+.provider-login-card input:hover {
+  background: #0a1c2c;
+}
+
+
+.provider-login-card input:focus {
+
+  border-color: #34d399;
+
+  background: #0b1f2d;
+
+  box-shadow:
+    0 0 0 3px rgba(52, 211, 153, 0.1),
+    0 0 20px rgba(52, 211, 153, 0.08);
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.provider-login-card form button {
+
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #059669,
+      #0284c7
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(5, 150, 105, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* SHINE EFFECT */
+
+.provider-login-card form button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: 0.65s;
+}
+
+
+.provider-login-card form button:hover::before {
+  left: 140%;
+}
+
+
+.provider-login-card form button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(5, 150, 105, 0.35),
+    0 0 25px rgba(14, 165, 233, 0.15);
+}
+
+
+.provider-login-card form button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.provider-back-btn {
+
+  margin-top: 22px;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #6ee7b7;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.provider-back-btn:hover {
+
+  color: white;
+
+  background:
+    rgba(52, 211, 153, 0.08);
+
+  transform: translateX(-4px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .provider-login-page {
+    padding: 20px 15px;
+  }
+
+  .provider-login-card {
+    padding: 35px 23px;
+    border-radius: 21px;
+  }
+
+  .provider-login-card h1 {
+    font-size: 27px;
+  }
+
+  .provider-login-subtitle {
+    font-size: 14px;
+  }
+
+  .provider-login-icon {
+    width: 74px;
+    height: 74px;
+    font-size: 34px;
+  }
+
+}

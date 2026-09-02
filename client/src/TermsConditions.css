@@ -1,0 +1,340 @@
+/* =========================================================
+   SERVICEHUB — TERMS & CONDITIONS
+   WARM PREMIUM LIGHT THEME
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.terms-page {
+  min-height: 100vh;
+  background: #e6dfd8;
+  color: #0f0c0a;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.terms-navbar {
+  height: 76px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #9abab6;
+  border-bottom: 1px solid rgba(80, 68, 58, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(26px);
+}
+
+.terms-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #17120f;
+}
+
+.terms-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 900;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.22);
+}
+
+.terms-nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.terms-nav-links a {
+  color: #302925;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.terms-nav-links a:hover {
+  color: #111;
+}
+
+.terms-nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.terms-customer-btn,
+.terms-login-btn {
+  padding: 11px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.terms-customer-btn {
+  color: #6d28d9;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.terms-login-btn {
+  color: white;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+/* ================= HERO ================= */
+
+.terms-hero {
+  padding: 100px 7%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 40%, rgba(124, 58, 237, 0.1), transparent 30%),
+    radial-gradient(circle at 80% 60%, rgba(6, 182, 212, 0.1), transparent 30%),
+    #e6dfd8;
+}
+
+.terms-hero-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.terms-hero span {
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.terms-hero h1 {
+  margin: 18px 0;
+  font-size: clamp(42px, 6vw, 68px);
+  letter-spacing: -2.5px;
+}
+
+.terms-hero strong {
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terms-hero p {
+  color: #665b53;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ================= CONTENT ================= */
+
+.terms-content {
+  padding: 85px 7%;
+  background: #e0d9d1;
+}
+
+.terms-intro {
+  max-width: 850px;
+  margin: auto auto 50px;
+  text-align: center;
+}
+
+.terms-intro span {
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.terms-intro h2 {
+  margin: 13px 0;
+  font-size: 38px;
+}
+
+.terms-intro p {
+  color: #5f554d;
+  line-height: 1.8;
+}
+
+/* ================= TERMS CARDS ================= */
+
+.terms-list {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  gap: 17px;
+}
+
+.terms-card {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 17px;
+  background: #f2ede8;
+  border: 1px solid rgba(80, 68, 58, 0.08);
+  box-shadow: 0 12px 28px rgba(28, 23, 20, 0.045);
+  transition: 0.25s ease;
+}
+
+.terms-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 18px 35px rgba(28, 23, 20, 0.08);
+}
+
+.terms-number {
+  font-size: 17px;
+  font-weight: 900;
+  color: #7c3aed;
+}
+
+.terms-card h3 {
+  margin: 0 0 9px;
+  font-size: 18px;
+}
+
+.terms-card p {
+  margin: 0;
+  color: #665b53;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ================= NOTICE ================= */
+
+.terms-notice {
+  max-width: 950px;
+  margin: 35px auto 0;
+  padding: 25px 28px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.09),
+    rgba(6, 182, 212, 0.09)
+  );
+  border: 1px solid rgba(124, 58, 237, 0.14);
+}
+
+.terms-notice strong {
+  color: #6d28d9;
+}
+
+.terms-notice p {
+  margin: 8px 0 0;
+  color: #5f554d;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+/* ================= FOOTER ================= */
+
+.terms-footer {
+  padding: 65px 7% 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 45px;
+  background: #d9d1c9;
+}
+
+.terms-footer-brand {
+  max-width: 330px;
+}
+
+.terms-footer-brand p {
+  color: #665b53;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.terms-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.terms-footer-column h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.terms-footer-column a {
+  color: #665b53;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.terms-footer-column a:hover {
+  color: #7c3aed;
+}
+
+.terms-footer-bottom {
+  grid-column: 1 / -1;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(80, 68, 58, 0.1);
+  color: #796d64;
+  font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .terms-nav-links {
+    display: none;
+  }
+
+  .terms-footer {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .terms-nav-buttons {
+    display: none;
+  }
+
+  .terms-hero {
+    padding: 75px 6%;
+  }
+
+  .terms-hero h1 {
+    font-size: 43px;
+  }
+
+  .terms-content {
+    padding: 65px 5%;
+  }
+
+  .terms-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 23px;
+  }
+
+  .terms-footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 55px 6% 25px;
+  }
+
+  .terms-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .terms-footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

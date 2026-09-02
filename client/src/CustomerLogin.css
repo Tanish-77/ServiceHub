@@ -1,0 +1,534 @@
+/* =========================================
+   CUSTOMER LOGIN PAGE
+========================================= */
+
+.customer-login-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 20px;
+
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      120deg,
+      #020617 0%,
+      #0f172a 45%,
+      #172554 100%
+    );
+}
+
+
+/* =========================================
+   ANIMATED BACKGROUND
+========================================= */
+
+.customer-login-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.45),
+      transparent 68%
+    );
+
+  top: -220px;
+  left: -180px;
+
+  animation: customerOrbOne 9s ease-in-out infinite;
+}
+
+
+.customer-login-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.4),
+      transparent 68%
+    );
+
+  right: -180px;
+  bottom: -200px;
+
+  animation: customerOrbTwo 10s ease-in-out infinite;
+}
+
+
+@keyframes customerOrbOne {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(100px, 70px);
+  }
+
+}
+
+
+@keyframes customerOrbTwo {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-80px, -60px);
+  }
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.customer-login-card {
+  width: 100%;
+  max-width: 440px;
+
+  position: relative;
+  z-index: 2;
+
+  padding: 42px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  background:
+    rgba(15, 23, 42, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  animation: customerCardEntry 0.8s ease forwards;
+}
+
+
+@keyframes customerCardEntry {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================
+   TOP GLOW LINE
+========================================= */
+
+.customer-login-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+
+  width: 76%;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #60a5fa,
+      #a78bfa,
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(96, 165, 250, 0.8);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.customer-login-icon {
+
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  font-size: 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.25),
+      rgba(139, 92, 246, 0.3)
+    );
+
+  border: 1px solid rgba(147, 197, 253, 0.25);
+
+  box-shadow:
+    0 10px 35px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  animation: customerIconFloat 3.5s ease-in-out infinite;
+}
+
+
+@keyframes customerIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.customer-login-card h1 {
+
+  margin: 0 0 10px;
+
+  color: #f8fafc;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.customer-login-subtitle {
+
+  margin: 0 0 32px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.customer-login-card form {
+  text-align: left;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.customer-login-card label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.customer-login-card input {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  margin-bottom: 21px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  outline: none;
+
+  background:
+    rgba(2, 6, 23, 0.55);
+
+  color: #f8fafc;
+
+  font-size: 15px;
+
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.customer-login-card input::placeholder {
+  color: #64748b;
+}
+
+
+.customer-login-card input:hover {
+
+  background:
+    rgba(15, 23, 42, 0.75);
+}
+
+
+.customer-login-card input:focus {
+
+  border-color: #60a5fa;
+
+  background:
+    rgba(15, 23, 42, 0.85);
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.12),
+    0 0 22px rgba(59, 130, 246, 0.12);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.customer-login-card form button {
+
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 14px 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* BUTTON SHINE */
+
+.customer-login-card form button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: 0.6s;
+}
+
+
+.customer-login-card form button:hover::before {
+  left: 140%;
+}
+
+
+.customer-login-card form button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.4),
+    0 0 25px rgba(124, 58, 237, 0.25);
+}
+
+
+.customer-login-card form button:active {
+
+  transform: translateY(0) scale(0.98);
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-role-btn {
+
+  margin-top: 22px;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #93c5fd;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.back-role-btn:hover {
+
+  color: white;
+
+  background:
+    rgba(59, 130, 246, 0.1);
+
+  transform: translateX(-4px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .customer-login-page {
+    padding: 20px 15px;
+  }
+
+
+  .customer-login-card {
+
+    padding: 35px 23px;
+
+    border-radius: 23px;
+  }
+
+
+  .customer-login-card h1 {
+
+    font-size: 27px;
+  }
+
+
+  .customer-login-subtitle {
+
+    font-size: 14px;
+
+    margin-bottom: 27px;
+  }
+
+
+  .customer-login-icon {
+
+    width: 72px;
+    height: 72px;
+
+    font-size: 33px;
+  }
+
+}

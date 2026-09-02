@@ -1,0 +1,872 @@
+/* =========================================================
+   SERVICEHUB — ADMIN LOGIN
+   PREMIUM GLASS / AURORA UI
+   CLASS NAMES UNCHANGED
+========================================================= */
+
+.admin-login-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 20px;
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(59, 130, 246, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(139, 92, 246, 0.32),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(6, 182, 212, 0.20),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #050816 0%,
+      #0b1025 45%,
+      #111936 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.admin-login-page {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(59, 130, 246, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(139, 92, 246, 0.32),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(6, 182, 212, 0.20),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #050816,
+      #0b1025,
+      #111936
+    );
+
+  background-size:
+    45px 45px,
+    45px 45px,
+    auto,
+    auto,
+    auto,
+    auto;
+}
+
+
+/* =========================================================
+   LARGE AURORA BLOBS
+========================================================= */
+
+.admin-login-page::before,
+.admin-login-page::after {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(4px);
+
+  z-index: 0;
+}
+
+
+/* BLUE ORB */
+
+.admin-login-page::before {
+  width: 430px;
+  height: 430px;
+
+  left: -170px;
+  top: -150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.32),
+      rgba(37, 99, 235, 0.08) 45%,
+      transparent 70%
+    );
+
+  animation:
+    adminOrbOne 10s ease-in-out infinite alternate;
+}
+
+
+/* PURPLE/CYAN ORB */
+
+.admin-login-page::after {
+  width: 500px;
+  height: 500px;
+
+  right: -200px;
+  bottom: -230px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.28),
+      rgba(6, 182, 212, 0.08) 45%,
+      transparent 70%
+    );
+
+  animation:
+    adminOrbTwo 12s ease-in-out infinite alternate;
+}
+
+
+@keyframes adminOrbOne {
+  0% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(80px, 50px)
+      scale(1.12);
+  }
+
+  100% {
+    transform:
+      translate(30px, 100px)
+      scale(0.95);
+  }
+}
+
+
+@keyframes adminOrbTwo {
+  0% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-70px, -60px)
+      scale(1.15);
+  }
+
+  100% {
+    transform:
+      translate(-20px, -100px)
+      scale(0.95);
+  }
+}
+
+
+/* =========================================================
+   ADMIN LOGIN CARD
+========================================================= */
+
+.admin-login-card {
+  width: min(455px, 100%);
+
+  padding: 44px 42px;
+
+  position: relative;
+  z-index: 5;
+
+  box-sizing: border-box;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.055)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.50),
+    0 0 80px rgba(59, 130, 246, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+  animation:
+    adminCardEntrance 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+
+/* GRADIENT BORDER */
+
+.admin-login-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: 30px;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(59, 130, 246, 0.75),
+      rgba(139, 92, 246, 0.70),
+      rgba(6, 182, 212, 0.55),
+      rgba(59, 130, 246, 0.75)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  animation:
+    borderRotate 6s linear infinite;
+}
+
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+/* CARD TOP LIGHT */
+
+.admin-login-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+
+  width: 76%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+
+  opacity: 0.6;
+}
+
+
+.admin-login-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.58),
+    0 0 70px rgba(59, 130, 246, 0.14),
+    0 0 100px rgba(139, 92, 246, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+
+@keyframes adminCardEntrance {
+  from {
+    opacity: 0;
+    transform:
+      translateY(45px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   ADMIN ICON
+========================================================= */
+
+.admin-login-icon {
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #6366f1 45%,
+      #8b5cf6
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  font-size: 35px;
+
+  box-shadow:
+    0 18px 45px
+      rgba(37, 99, 235, 0.35),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.3);
+
+  animation:
+    adminIconAnimation 4s ease-in-out infinite;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* ICON OUTER GLOW */
+
+.admin-login-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #8b5cf6,
+      #06b6d4
+    );
+
+  opacity: 0.18;
+
+  filter: blur(14px);
+
+  z-index: -1;
+}
+
+
+.admin-login-icon:hover {
+  transform:
+    translateY(-5px)
+    rotate(-2deg);
+
+  box-shadow:
+    0 25px 55px
+      rgba(99, 102, 241, 0.45),
+    0 0 30px
+      rgba(6, 182, 212, 0.20);
+}
+
+
+@keyframes adminIconAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.admin-login-card h1 {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 3.5px;
+
+  text-transform: uppercase;
+
+  color: #93c5fd;
+}
+
+
+/* =========================================================
+   SECOND HEADING
+========================================================= */
+
+.admin-login-card h2 {
+  margin: 9px 0 0;
+
+  font-size: 32px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #dbeafe,
+      #c4b5fd,
+      #ffffff
+    );
+
+  background-size: 200%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  animation:
+    headingShine 5s linear infinite;
+}
+
+
+@keyframes headingShine {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 200%;
+  }
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.admin-login-card p {
+  margin: 12px 0 31px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-login-card form {
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.admin-login-card label {
+  margin: 14px 0 8px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #cbd5e1;
+
+  letter-spacing: 0.25px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.admin-login-card input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 17px;
+
+  border-radius: 14px;
+
+  border: 1px solid
+    rgba(148, 163, 184, 0.18);
+
+  outline: none;
+
+  background:
+    rgba(2, 6, 23, 0.52);
+
+  color: #f8fafc;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.admin-login-card input::placeholder {
+  color: #64748b;
+}
+
+
+.admin-login-card input:hover {
+  border-color:
+    rgba(96, 165, 250, 0.35);
+
+  background:
+    rgba(2, 6, 23, 0.65);
+}
+
+
+.admin-login-card input:focus {
+  border-color:
+    rgba(96, 165, 250, 0.85);
+
+  background:
+    rgba(2, 6, 23, 0.78);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 0 0 4px
+      rgba(59, 130, 246, 0.10),
+    0 12px 30px
+      rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.admin-login-card button {
+  width: 100%;
+
+  margin-top: 27px;
+
+  padding: 15px 18px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      120deg,
+      #2563eb,
+      #4f46e5,
+      #7c3aed,
+      #2563eb
+    );
+
+  background-size: 250% 250%;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px
+      rgba(37, 99, 235, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-position 0.5s ease;
+}
+
+
+.admin-login-card button:hover {
+  transform: translateY(-4px);
+
+  background-position:
+    100% 50%;
+
+  box-shadow:
+    0 20px 45px
+      rgba(37, 99, 235, 0.40),
+    0 0 25px
+      rgba(139, 92, 246, 0.15);
+}
+
+
+.admin-login-card button:active {
+  transform:
+    translateY(-1px)
+    scale(0.985);
+}
+
+
+/* BUTTON SHINE */
+
+.admin-login-card button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 65%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.30),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+}
+
+
+.admin-login-card button:hover::before {
+  left: 140%;
+}
+
+
+/* BUTTON LIGHT */
+
+.admin-login-card button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 15%;
+
+  width: 70%;
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.admin-login-card button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .admin-login-page {
+    padding: 20px 15px;
+
+    background-size:
+      35px 35px,
+      35px 35px,
+      auto,
+      auto,
+      auto,
+      auto;
+  }
+
+  .admin-login-card {
+    padding: 36px 24px;
+
+    border-radius: 25px;
+  }
+
+  .admin-login-card::before {
+    border-radius: 25px;
+  }
+
+  .admin-login-card h2 {
+    font-size: 28px;
+  }
+
+  .admin-login-icon {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 21px;
+
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .admin-login-card {
+    padding: 30px 18px;
+
+    border-radius: 22px;
+  }
+
+  .admin-login-card h1 {
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .admin-login-card h2 {
+    font-size: 25px;
+  }
+
+  .admin-login-card input {
+    padding: 13px 14px;
+  }
+
+  .admin-login-card button {
+    padding: 14px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .admin-login-page::before,
+  .admin-login-page::after,
+  .admin-login-card,
+  .admin-login-icon,
+  .admin-login-card h2,
+  .admin-login-card::before {
+    animation: none;
+  }
+
+  .admin-login-card,
+  .admin-login-icon,
+  .admin-login-card button {
+    transition: none;
+  }
+}
+
+/* //1. 🔔 Notifications ← NEXT
+2. 👤 Customer Profile
+3. 📸 Provider Profile + Service Images
+4. ⭐ Provider Rating/Reviews improvement
+5. 💰 Earnings dashboard for Provider
+6. 📊 Admin Analytics Dashboard
+7. 🔎 Advanced search + location filtering
+8. 💬 Customer ↔ Provider Chat
+9. 📱 Fully responsive/mobile polish
+10. 🚀 Deployment + production setup */

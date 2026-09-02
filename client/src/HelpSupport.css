@@ -1,0 +1,487 @@
+/* =========================================================
+   SERVICEHUB — HELP & SUPPORT
+   WARM PREMIUM LIGHT THEME
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.help-page {
+  min-height: 100vh;
+  background: #e6dfd8;
+  color: #0f0c0a;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.help-navbar {
+  height: 76px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #9abab6;
+  border-bottom: 1px solid rgba(80, 68, 58, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(26px);
+}
+
+.help-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #17120f;
+}
+
+.help-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 900;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.22);
+}
+
+.help-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.help-nav-links a {
+  color: #302925;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.help-nav-links a:hover {
+  color: #111;
+}
+
+.help-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.help-customer-btn,
+.help-login-btn {
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.help-customer-btn {
+  color: #6d28d9;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.help-login-btn {
+  color: white;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+.help-customer-btn:hover,
+.help-login-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= HERO ================= */
+
+.help-hero {
+  min-height: 430px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(124, 58, 237, 0.11), transparent 30%),
+    radial-gradient(circle at 85% 70%, rgba(6, 182, 212, 0.12), transparent 30%),
+    #e6dfd8;
+}
+
+.help-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(70, 60, 52, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 60, 52, 0.07) 1px, transparent 1px);
+  background-size: 45px 45px;
+  pointer-events: none;
+}
+
+.help-hero-content {
+  max-width: 720px;
+  position: relative;
+  z-index: 2;
+}
+
+.help-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #7c3aed;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.help-hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.help-hero h1 span {
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.help-hero p {
+  max-width: 600px;
+  margin-top: 25px;
+  color: #5f554d;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.help-hero-circle {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 100px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow:
+    0 30px 70px rgba(124, 58, 237, 0.22),
+    0 0 80px rgba(6, 182, 212, 0.12);
+  transform: rotate(-8deg);
+}
+
+/* ================= SECTION ================= */
+
+.help-section {
+  padding: 90px 7%;
+  background: #9abab6;
+}
+
+.help-section-heading {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.help-section-heading span {
+  color: #6d28d9;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.help-section-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -1.5px;
+}
+
+.help-section-heading p {
+  margin: 0;
+  color: #4a3f38;
+  line-height: 1.7;
+}
+
+/* ================= HELP CARDS ================= */
+
+.help-grid {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.help-card {
+  padding: 30px;
+  min-height: 245px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    #f2ede8,
+    #e8e2db
+  );
+  border: 1px solid rgba(80, 68, 58, 0.08);
+  box-shadow: 0 15px 35px rgba(28, 23, 20, 0.06);
+  transition: 0.3s ease;
+}
+
+.help-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 45px rgba(28, 23, 20, 0.1);
+}
+
+.help-card-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  font-size: 25px;
+  background: rgba(124, 58, 237, 0.09);
+}
+
+.help-card h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+}
+
+.help-card p {
+  margin: 0;
+  color: #665b53;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* ================= FAQ ================= */
+
+.help-faq {
+  padding: 90px 7%;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.07), transparent 28%),
+    #e0d9d1;
+}
+
+.help-faq-list {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  gap: 16px;
+}
+
+.help-faq-item {
+  padding: 25px 30px;
+  border-radius: 16px;
+  background: #f2ede8;
+  border: 1px solid rgba(80, 68, 58, 0.08);
+  box-shadow: 0 10px 25px rgba(28, 23, 20, 0.04);
+}
+
+.help-faq-item h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.help-faq-item p {
+  margin: 0;
+  color: #665b53;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ================= CONTACT ================= */
+
+.help-contact {
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+}
+
+.help-contact span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.help-contact h2 {
+  margin: 12px 0;
+  font-size: clamp(30px, 4vw, 45px);
+}
+
+.help-contact p {
+  max-width: 650px;
+  margin: 0;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.help-contact-btn {
+  flex-shrink: 0;
+  padding: 15px 25px;
+  border-radius: 12px;
+  background: white;
+  color: #5b21b6;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.help-contact-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+.help-footer {
+  padding: 65px 7% 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 45px;
+  background: #d9d1c9;
+}
+
+.help-footer-brand {
+  max-width: 330px;
+}
+
+.help-footer-brand p {
+  color: #665b53;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.help-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.help-footer-column h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.help-footer-column a {
+  color: #665b53;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.help-footer-column a:hover {
+  color: #7c3aed;
+}
+
+.help-footer-bottom {
+  grid-column: 1 / -1;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(80, 68, 58, 0.1);
+  color: #796d64;
+  font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .help-nav-links {
+    display: none;
+  }
+
+  .help-hero {
+    padding: 70px 6%;
+  }
+
+  .help-hero-circle {
+    width: 150px;
+    height: 150px;
+    font-size: 70px;
+  }
+
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .help-footer {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .help-navbar {
+    padding: 0 5%;
+  }
+
+  .help-nav-buttons {
+    display: none;
+  }
+
+  .help-hero {
+    min-height: 500px;
+    padding: 60px 6%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 45px;
+  }
+
+  .help-hero h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .help-hero-circle {
+    width: 105px;
+    height: 105px;
+    font-size: 50px;
+    align-self: flex-end;
+  }
+
+  .help-section,
+  .help-faq {
+    padding: 65px 5%;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-contact {
+    padding: 60px 6%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .help-footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 55px 6% 25px;
+  }
+
+  .help-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .help-footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
