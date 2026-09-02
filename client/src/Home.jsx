@@ -477,7 +477,7 @@ function Home() {
 
         </div>
 
-      </section>es-heading
+      </section>
 
 
       {/* =========================================
