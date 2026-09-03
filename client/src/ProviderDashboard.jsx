@@ -63,9 +63,12 @@ function ProviderDashboard() {
 
   const handleLogout = () => {
 
-    localStorage.removeItem("providerId");
-    localStorage.removeItem("providerName");
-    localStorage.removeItem("providerPhone");
+  localStorage.removeItem("providerToken");
+  localStorage.removeItem("providerId");
+  localStorage.removeItem("providerName");
+  localStorage.removeItem("providerPhone");
+  localStorage.removeItem("providerEmail");
+
 
     window.location.href = "/";
 
@@ -161,7 +164,7 @@ function ProviderDashboard() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/bookings"
+      `${API_URL}/api/bookings`
       );
 
       const data = await response.json();
@@ -210,7 +213,7 @@ function ProviderDashboard() {
       setReviewsLoading(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/reviews/provider/${providerId}`
+        `${API_URL}/api/reviews/provider/${providerId}`
       );
 
       const data = await response.json();
@@ -349,7 +352,7 @@ function ProviderDashboard() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/providers/${providerId}`,
+        `${API_URL}/api/providers/${providerId}`,
         {
           method: "PUT",
 
@@ -414,7 +417,7 @@ function ProviderDashboard() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/providers/${providerId}`,
+       `${API_URL}/api/providers/${providerId}`,
         {
           method: "PUT",
 
@@ -499,7 +502,7 @@ function ProviderDashboard() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/bookings/${bookingId}/status`,
+        `${API_URL}/api/bookings/${bookingId}/status`,
         {
           method: "PUT",
 

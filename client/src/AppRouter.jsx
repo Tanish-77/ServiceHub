@@ -7,7 +7,10 @@ import Admin from "./Admin.jsx";
 import AdminLogin from "./AdminLogin.jsx";
 
 import CustomerLogin from "./CustomerLogin.jsx";
+import CustomerRegister from "./CustomerRegister.jsx";
+
 import ProviderLogin from "./ProviderLogin.jsx";
+import ProviderRegister from "./ProviderRegister.jsx";
 import ProviderDashboard from "./ProviderDashboard.jsx";
 
 import RoleSelection from "./RoleSelection.jsx";
@@ -19,28 +22,18 @@ import HelpSupport from "./HelpSupport.jsx";
 import TermsConditions from "./TermsConditions.jsx";
 
 function Main() {
-
-  // =========================================
-  // ADMIN LOGIN STATE
-  // =========================================
-
   const [isAdmin, setIsAdmin] = useState(false);
-
-
-  // =========================================
-  // CURRENT PATH
-  // =========================================
 
   const path = window.location.pathname;
 
-
-  // =========================================
-  // CUSTOMER AUTH CHECK
-  // =========================================
-
   useEffect(() => {
+    // =========================
+    // CUSTOMER AUTH CHECK
+    // =========================
 
     if (path === "/customer") {
+      const customerToken =
+        localStorage.getItem("customerToken");
 
       const customerName =
         localStorage.getItem("customerName");
@@ -48,55 +41,88 @@ function Main() {
       const customerPhone =
         localStorage.getItem("customerPhone");
 
-
-      // Customer is NOT logged in
-      if (!customerName || !customerPhone) {
-
+      if (
+        !customerToken ||
+        !customerName ||
+        !customerPhone
+      ) {
         window.location.href = "/login";
-
       }
-
     }
 
+    // =========================
+    // PROVIDER AUTH CHECK
+    // =========================
+
+    if (path === "/provider-dashboard") {
+      const providerToken =
+        localStorage.getItem("providerToken");
+
+      const providerId =
+        localStorage.getItem("providerId");
+
+      if (!providerToken || !providerId) {
+        window.location.href =
+          "/provider-login";
+      }
+    }
   }, [path]);
 
-
-  // =========================================
+  // =========================
   // ADMIN LOGIN
-  // =========================================
+  // =========================
 
   const handleAdminLogin = () => {
     setIsAdmin(true);
   };
 
-
-  // =========================================
+  // =========================
   // ADMIN LOGOUT
-  // =========================================
+  // =========================
 
   const handleAdminLogout = () => {
     setIsAdmin(false);
   };
 
-
-  // =========================================
+  // =========================
   // HOME
-  // /
-  // =========================================
+  // =========================
 
   if (path === "/") {
-
     return <Home />;
-
   }
 
+  // =========================
+  // ROLE SELECTION
+  // =========================
 
-  // =========================================
-  // CUSTOMER AREA
-  // /customer
-  // =========================================
+  if (path === "/role-selection") {
+    return <RoleSelection />;
+  }
+
+  // =========================
+  // CUSTOMER LOGIN
+  // =========================
+
+  if (path === "/login") {
+    return <CustomerLogin />;
+  }
+
+  // =========================
+  // CUSTOMER REGISTER
+  // =========================
+
+  if (path === "/customer-register") {
+    return <CustomerRegister />;
+  }
+
+  // =========================
+  // CUSTOMER DASHBOARD
+  // =========================
 
   if (path === "/customer") {
+    const customerToken =
+      localStorage.getItem("customerToken");
 
     const customerName =
       localStorage.getItem("customerName");
@@ -104,147 +130,124 @@ function Main() {
     const customerPhone =
       localStorage.getItem("customerPhone");
 
-
-    // Wait for redirect if customer is not logged in
-    if (!customerName || !customerPhone) {
-
+    if (
+      !customerToken ||
+      !customerName ||
+      !customerPhone
+    ) {
       return null;
-
     }
 
-
     return <App />;
-
   }
 
+  // =========================
+  // SERVICES
+  // =========================
 
-  // =========================================
-  // CUSTOMER LOGIN
-  // /login
-  // =========================================
-
-  if (path === "/login") {
-
-    return <CustomerLogin />;
-
+  if (path === "/services") {
+    return <Services />;
   }
 
+  // =========================
+  // PROVIDERS
+  // =========================
 
-  // =========================================
-  // ROLE SELECTION
-  // /role-selection
-  // =========================================
-
-  if (path === "/role-selection") {
-
-    return <RoleSelection />;
-
+  if (path === "/providers") {
+    return <Providers />;
   }
 
-  // =========================================
-// SERVICES
-// /services
-// =========================================
-
-if (path === "/services") {
-
-  return <Services />;
-
-}
-
-if (path === "/providers") {
-  return <Providers />;
-}
-  // =========================================
+  // =========================
   // PROVIDER LOGIN
-  // /provider-login
-  // =========================================
+  // =========================
 
   if (path === "/provider-login") {
-
     return <ProviderLogin />;
-
   }
-    // =========================================
-  // HowItWorks
-  // HowItWorks
-  // =========================================
-if (path === "/how-it-works") {
-  return <HowItWorks />;
-}
 
+  // =========================
+  // PROVIDER REGISTER
+  // =========================
 
-  // =========================================
-  // About US 
-  // /About us
-  // =========================================
-if (path === "/about") {
-  return <About />;
-}
-    // =========================================
-// HELP & SUPPORT
-// /help-support
-// =========================================
+  if (path === "/provider-register") {
+    return <ProviderRegister />;
+  }
 
-if (path === "/help-support") {
-  return <HelpSupport />;
-}
-
-
-// =========================================
-// TERMS & CONDITIONS
-// /terms-conditions
-// =========================================
-
-if (path === "/terms-conditions") {
-  return <TermsConditions />;
-}
-  // =========================================
+  // =========================
   // PROVIDER DASHBOARD
-  // /provider-dashboard
-  // =========================================
+  // =========================
 
   if (path === "/provider-dashboard") {
+    const providerToken =
+      localStorage.getItem("providerToken");
+
+    const providerId =
+      localStorage.getItem("providerId");
+
+    if (!providerToken || !providerId) {
+      return null;
+    }
 
     return <ProviderDashboard />;
-
   }
 
+  // =========================
+  // HOW IT WORKS
+  // =========================
 
-  // =========================================
+  if (path === "/how-it-works") {
+    return <HowItWorks />;
+  }
+
+  // =========================
+  // ABOUT
+  // =========================
+
+  if (path === "/about") {
+    return <About />;
+  }
+
+  // =========================
+  // HELP & SUPPORT
+  // =========================
+
+  if (path === "/help-support") {
+    return <HelpSupport />;
+  }
+
+  // =========================
+  // TERMS & CONDITIONS
+  // =========================
+
+  if (path === "/terms-conditions") {
+    return <TermsConditions />;
+  }
+
+  // =========================
   // ADMIN
-  // /admin
-  // =========================================
+  // =========================
 
   if (path === "/admin") {
-
     if (!isAdmin) {
-
       return (
         <AdminLogin
           onLogin={handleAdminLogin}
         />
       );
-
     }
-
 
     return (
       <Admin
         onLogout={handleAdminLogout}
       />
     );
-
   }
 
-
-  // =========================================
+  // =========================
   // DEFAULT
-  // =========================================
+  // =========================
 
   return <Home />;
-
 }
-
 
 export default Main;

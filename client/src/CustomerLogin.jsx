@@ -1,31 +1,96 @@
 import { useState } from "react";
 import "./CustomerLogin.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function CustomerLogin() {
+  const [emailOrPhone, setEmailOrPhone] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
-
-  const handleLogin = (event) => {
-
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    if (!name.trim()) {
-      alert("Please enter your name.");
+    if (!emailOrPhone.trim()) {
+      alert("Please enter your email or phone number.");
       return;
     }
 
-    if (!/^[0-9]{10}$/.test(phone)) {
-      alert("Please enter a valid 10-digit phone number.");
+    if (!password) {
+      alert("Please enter your password.");
       return;
     }
 
-    // Save customer information
-    localStorage.setItem("customerName", name.trim());
-    localStorage.setItem("customerPhone", phone);
+    try {
+      const response = await fetch(
+        `${API_URL}/api/customers/login`,
+        {
+          method: "POST",
 
-    // Go to ServiceHub
-    window.location.href = "/customer";
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            emailOrPhone: emailOrPhone.trim(),
+            password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.message ||
+            "Invalid email/phone or password."
+        );
+      }
+
+      // =========================================
+      // SAVE CUSTOMER AUTH
+      // =========================================
+
+      localStorage.setItem(
+        "customerToken",
+        data.token
+      );
+
+      localStorage.setItem(
+        "customerId",
+        data.customer.id
+      );
+
+      localStorage.setItem(
+        "customerName",
+        data.customer.name
+      );
+
+      localStorage.setItem(
+        "customerPhone",
+        data.customer.phone
+      );
+
+      localStorage.setItem(
+        "customerEmail",
+        data.customer.email
+      );
+
+      // =========================================
+      // CUSTOMER APP
+      // =========================================
+
+      window.location.href = "/customer";
+    } catch (error) {
+      console.log(
+        "Customer Login Error:",
+        error
+      );
+
+      alert(
+        error.message ||
+          "Unable to login. Please try again."
+      );
+    }
   };
 
   return (
@@ -46,29 +111,30 @@ function CustomerLogin() {
         <form onSubmit={handleLogin}>
 
           <label>
-            Your Name
+            Email or Phone Number
           </label>
 
           <input
             type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            placeholder="Enter email or phone"
+            value={emailOrPhone}
+            onChange={(event) =>
+              setEmailOrPhone(event.target.value)
+            }
           />
 
-
           <label>
-            Phone Number
+            Password
           </label>
 
           <input
-            type="tel"
-            placeholder="Enter 10-digit phone number"
-            value={phone}
-            maxLength={10}
-            onChange={(event) => setPhone(event.target.value)}
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(event) =>
+              setPassword(event.target.value)
+            }
           />
-
 
           <button type="submit">
             Login
@@ -76,15 +142,22 @@ function CustomerLogin() {
 
         </form>
 
+        <p style={{ marginTop: "18px" }}>
+          Don't have an account?{" "}
+          <a href="/customer-register">
+            Register
+          </a>
+        </p>
 
         <button
-  className="back-role-btn"
-  onClick={() => {
-    window.location.href = "/";
-  }}
->
-  ← Back
-</button>
+          className="back-role-btn"
+          onClick={() => {
+            window.location.href =
+              "/role-selection";
+          }}
+        >
+          ← Back
+        </button>
 
       </div>
 
@@ -92,4 +165,4 @@ function CustomerLogin() {
   );
 }
 
-export default CustomerLogin;
+export default CustomerLogin;s

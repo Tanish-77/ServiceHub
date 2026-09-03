@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./AdminLogin.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function AdminLogin({ onLogin }) {
 
   const [email, setEmail] = useState("");
@@ -21,7 +23,7 @@ function AdminLogin({ onLogin }) {
       setLoading(true);
 
       const response = await fetch(
-        "${API_URL}/api/admin/login",
+        `${API_URL}/api/admin/login`,
         {
           method: "POST",
 

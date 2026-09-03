@@ -77,8 +77,16 @@ const [bookingData, setBookingData] = useState({
 
   const handleCustomerLogout = () => {
 
+
+    localStorage.removeItem("customerToken");
+
+    localStorage.removeItem("customerId");
+
     localStorage.removeItem("customerName");
+
     localStorage.removeItem("customerPhone");
+
+    localStorage.removeItem("customerEmail");
 
     window.location.href = "/";
 

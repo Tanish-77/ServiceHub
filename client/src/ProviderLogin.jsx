@@ -1,238 +1,135 @@
 import { useState } from "react";
 import "./ProviderLogin.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ProviderLogin() {
-
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-
-
-  // =========================================
-  // PROVIDER LOGIN
-  // =========================================
+  const [emailOrPhone, setEmailOrPhone] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async (event) => {
-
     event.preventDefault();
 
-
-    // =========================================
-    // NAME VALIDATION
-    // =========================================
-
-    if (!name.trim()) {
-
-      alert("Please enter your name.");
-
+    if (!emailOrPhone.trim() || !password) {
+      alert("Please enter email/phone and password.");
       return;
-
     }
-
-
-    // =========================================
-    // PHONE VALIDATION
-    // =========================================
-
-    if (!/^[0-9]{10}$/.test(phone)) {
-
-      alert("Please enter a valid 10-digit phone number.");
-
-      return;
-
-    }
-
-
-    // =========================================
-    // FIND PROVIDER
-    // =========================================
 
     try {
-
       const response = await fetch(
-        "http://localhost:5000/api/providers"
+        `${API_URL}/api/providers/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            emailOrPhone,
+            password,
+          }),
+        }
       );
 
-
-      const providers = await response.json();
-
+      const data = await response.json();
 
       if (!response.ok) {
-
-        throw new Error(
-          "Unable to load providers"
-        );
-
-      }
-
-
-      // =========================================
-      // MATCH PROVIDER BY NAME
-      // =========================================
-
-      const provider = providers.find(
-        (item) =>
-          item.name.toLowerCase() ===
-          name.trim().toLowerCase()
-      );
-
-
-      // =========================================
-      // PROVIDER NOT FOUND
-      // =========================================
-
-      if (!provider) {
-
-        alert(
-          "Provider not found. Please check your provider name."
-        );
-
+        alert(data.message || "Login failed.");
         return;
-
       }
 
-
-      // =========================================
-      // SAVE PROVIDER INFORMATION
-      // =========================================
+      localStorage.setItem(
+        "providerToken",
+        data.token
+      );
 
       localStorage.setItem(
         "providerId",
-        provider._id
+        data.provider.id
       );
 
       localStorage.setItem(
         "providerName",
-        provider.name
+        data.provider.name
       );
 
       localStorage.setItem(
         "providerPhone",
-        phone
+        data.provider.phone
       );
 
-
-      // =========================================
-      // GO TO PROVIDER DASHBOARD
-      // =========================================
+      localStorage.setItem(
+        "providerEmail",
+        data.provider.email
+      );
 
       window.location.href =
         "/provider-dashboard";
-
-
     } catch (error) {
-
-      console.log(
-        "Provider Login Error:",
-        error
-      );
-
-
-      alert(
-        error.message ||
-        "Unable to login. Please try again."
-      );
-
+      console.error(error);
+      alert("Unable to connect to server.");
     }
-
   };
 
-
-  // =========================================
-  // UI
-  // =========================================
-
   return (
-
     <div className="provider-login-page">
-
       <div className="provider-login-card">
-
-
-        {/* ICON */}
-
         <div className="provider-login-icon">
-          🛠️
+          🧑‍🔧
         </div>
 
-
-        {/* TITLE */}
-
-        <h1>
-          Provider Login
-        </h1>
-
+        <h1>Provider Login</h1>
 
         <p className="provider-login-subtitle">
           Login to manage your services and bookings
         </p>
 
-
-        {/* LOGIN FORM */}
-
         <form onSubmit={handleLogin}>
-
-
-          {/* NAME */}
-
-          <label>
-            Provider Name
-          </label>
+          <label>Email or Phone</label>
 
           <input
             type="text"
-            placeholder="Enter your name"
-            value={name}
+            placeholder="Enter email or phone"
+            value={emailOrPhone}
             onChange={(event) =>
-              setName(event.target.value)
+              setEmailOrPhone(event.target.value)
             }
           />
 
-
-          {/* PHONE */}
-
-          <label>
-            Phone Number
-          </label>
+          <label>Password</label>
 
           <input
-            type="tel"
-            placeholder="Enter 10-digit phone number"
-            value={phone}
-            maxLength={10}
+            type="password"
+            placeholder="Enter password"
+            value={password}
             onChange={(event) =>
-              setPhone(event.target.value)
+              setPassword(event.target.value)
             }
           />
-
-
-          {/* LOGIN BUTTON */}
 
           <button type="submit">
             Login
           </button>
-
         </form>
 
-
-        {/* BACK BUTTON */}
+        <p style={{ marginTop: "18px" }}>
+          Don't have an account?{" "}
+          <a href="/provider-register">
+            Register
+          </a>
+        </p>
 
         <button
           className="provider-back-btn"
           onClick={() => {
-            window.location.href = "/";
+            window.location.href =
+              "/role-selection";
           }}
         >
           ← Back
         </button>
-
-
       </div>
-
     </div>
-
   );
-
 }
-
 
 export default ProviderLogin;
