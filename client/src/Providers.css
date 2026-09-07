@@ -11,9 +11,8 @@
   min-height: 100vh;
   background: #e6dfd8;
   color: #0f0c0a;
-
   font-family:
-    Inter,
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -21,26 +20,21 @@
     Arial,
     Helvetica,
     sans-serif;
-
   overflow-x: hidden;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 /* =========================================================
-   NAVBAR
+   NAVBAR — MATCHING HOME.CSS
 ========================================================= */
 
 .providers-navbar {
   height: 76px;
   padding: 0 5%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -55,7 +49,6 @@
   transition: background 0.4s ease;
 }
 
-
 /* =========================================================
    LOGO
 ========================================================= */
@@ -65,12 +58,11 @@
   align-items: center;
   gap: 10px;
 
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.8px;
 
   color: #0f0c0a;
-
   cursor: pointer;
 }
 
@@ -89,8 +81,8 @@
 }
 
 .providers-logo-icon {
-  width: 37px;
-  height: 37px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
   align-items: center;
@@ -110,8 +102,13 @@
 
   box-shadow:
     0 0 30px rgba(124, 58, 237, 0.3);
+
+  transition: transform 0.3s ease;
 }
 
+.providers-logo:hover .providers-logo-icon {
+  transform: rotate(-5deg) scale(1.05);
+}
 
 /* =========================================================
    NAV LINKS
@@ -120,27 +117,27 @@
 .providers-nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 34px;
 }
 
 .providers-nav-links a {
   position: relative;
 
   text-decoration: none;
-
   color: #4a3f38;
 
   font-size: 13px;
   font-weight: 600;
 
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .providers-nav-links a::after {
   content: "";
 
   position: absolute;
-
   left: 50%;
   bottom: -9px;
 
@@ -171,7 +168,6 @@
   width: 100%;
 }
 
-
 /* =========================================================
    NAV BUTTONS
 ========================================================= */
@@ -193,7 +189,10 @@
   font-size: 12px;
   font-weight: 800;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .providers-customer-btn {
@@ -225,6 +224,10 @@
   transform: translateY(-2px);
 }
 
+.providers-login-btn:hover {
+  box-shadow:
+    0 12px 35px rgba(124, 58, 237, 0.4);
+}
 
 /* =========================================================
    HERO
@@ -283,6 +286,8 @@
       black,
       transparent
     );
+
+  pointer-events: none;
 }
 
 .providers-hero-content {
@@ -314,6 +319,8 @@
   line-height: 1;
 
   letter-spacing: -3px;
+
+  font-weight: 900;
 }
 
 .providers-hero h1 span {
@@ -352,7 +359,6 @@
   font-size: 15px;
   line-height: 1.7;
 }
-
 
 /* =========================================================
    SEARCH SECTION
@@ -395,7 +401,6 @@
     0 20px 60px rgba(28, 23, 20, 0.06);
 }
 
-
 /* =========================================================
    SEARCH INPUT
 ========================================================= */
@@ -419,13 +424,19 @@
   border:
     1.5px solid rgba(80, 68, 58, 0.06);
 
-  transition: 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .provider-search-input:focus-within,
 .provider-filter:focus-within {
   border-color:
     rgba(124, 58, 237, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.45);
 
   box-shadow:
     0 8px 25px rgba(124, 58, 237, 0.06);
@@ -468,7 +479,6 @@
   color: #0f0c0a;
 }
 
-
 /* =========================================================
    PROVIDERS SECTION
 ========================================================= */
@@ -484,7 +494,6 @@
 
 .providers-section-heading {
   display: flex;
-
   align-items: flex-end;
   justify-content: space-between;
 
@@ -497,6 +506,7 @@
   color: #0f0c0a;
 
   font-size: 30px;
+
   letter-spacing: -1px;
 }
 
@@ -527,7 +537,6 @@
   font-weight: 800;
 }
 
-
 /* =========================================================
    PROVIDER GRID
 ========================================================= */
@@ -540,7 +549,6 @@
 
   gap: 20px;
 }
-
 
 /* =========================================================
    PROVIDER CARD
@@ -562,6 +570,8 @@
       #e8e2db
     );
 
+  background-size: 250% 250%;
+
   border:
     1.5px solid rgba(80, 68, 58, 0.06);
 
@@ -573,7 +583,8 @@
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    background-position 0.6s ease;
 }
 
 .provider-card::before {
@@ -594,7 +605,9 @@
 
   filter: blur(5px);
 
-  transition: 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .provider-card:hover {
@@ -606,12 +619,13 @@
   box-shadow:
     0 30px 65px rgba(28, 23, 20, 0.08),
     0 0 35px rgba(124, 58, 237, 0.05);
+
+  background-position: 100% 50%;
 }
 
 .provider-card:hover::before {
   transform: scale(1.8);
 }
-
 
 /* =========================================================
    CARD TOP
@@ -619,7 +633,6 @@
 
 .provider-card-top {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
@@ -651,6 +664,17 @@
 
   box-shadow:
     0 10px 30px rgba(124, 58, 237, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.provider-card:hover .provider-avatar {
+  transform: translateY(-3px) scale(1.04);
+
+  box-shadow:
+    0 14px 35px rgba(124, 58, 237, 0.28);
 }
 
 .provider-verified {
@@ -669,7 +693,6 @@
   font-size: 10px;
   font-weight: 800;
 }
-
 
 /* =========================================================
    CARD TEXT
@@ -690,7 +713,6 @@
 .provider-service,
 .provider-location {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
@@ -704,7 +726,6 @@
   position: relative;
   z-index: 2;
 }
-
 
 /* =========================================================
    DETAILS
@@ -752,14 +773,12 @@
   font-size: 12px;
 }
 
-
 /* =========================================================
    AVAILABILITY
 ========================================================= */
 
 .provider-availability {
   display: flex;
-
   align-items: center;
 
   gap: 7px;
@@ -798,7 +817,6 @@
   }
 }
 
-
 /* =========================================================
    BOOK BUTTON
 ========================================================= */
@@ -811,7 +829,6 @@
   padding: 13px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -835,7 +852,9 @@
 
   cursor: pointer;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   position: relative;
   z-index: 3;
@@ -852,13 +871,13 @@
 }
 
 .provider-book-btn span {
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
 .provider-book-btn:hover span {
   transform: translateX(4px);
 }
-
 
 /* =========================================================
    EMPTY / LOADING
@@ -923,9 +942,8 @@
   }
 }
 
-
 /* =========================================================
-   CTA
+   CTA — MATCHING HOME STYLE
 ========================================================= */
 
 .providers-cta {
@@ -933,13 +951,15 @@
     60px 8%;
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
   gap: 30px;
 
   color: white;
+
+  position: relative;
+  overflow: hidden;
 
   background:
     radial-gradient(
@@ -955,8 +975,32 @@
     );
 }
 
+.providers-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 0 0 35px rgba(255, 255, 255, 0.025),
+    0 0 0 70px rgba(255, 255, 255, 0.02);
+
+  pointer-events: none;
+}
+
 .providers-cta span {
   font-size: 10px;
+
   font-weight: 900;
 
   letter-spacing: 2px;
@@ -970,6 +1014,8 @@
     8px 0;
 
   font-size: 28px;
+
+  letter-spacing: -0.5px;
 }
 
 .providers-cta p {
@@ -994,11 +1040,14 @@
   text-decoration: none;
 
   font-size: 12px;
+
   font-weight: 900;
 
   white-space: nowrap;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .providers-cta a:hover {
@@ -1008,14 +1057,13 @@
     0 15px 35px rgba(28, 23, 20, 0.18);
 }
 
-
 /* =========================================================
-   FOOTER
+   FOOTER — MATCHING HOME.CSS
 ========================================================= */
 
 .providers-footer {
   padding:
-    60px 5% 20px;
+    70px 5% 24px;
 
   display: grid;
 
@@ -1035,6 +1083,7 @@
   color: #3d342e;
 
   font-size: 12px;
+
   line-height: 1.8;
 }
 
@@ -1053,6 +1102,8 @@
   color: #0f0c0a;
 
   font-size: 13px;
+
+  font-weight: 800;
 }
 
 .providers-footer-column a,
@@ -1065,7 +1116,9 @@
 
   font-size: 11px;
 
-  transition: 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .providers-footer-column a:hover {
@@ -1091,15 +1144,13 @@
     1.5px solid rgba(80, 68, 58, 0.04);
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
-
   .providers-nav-links {
-    gap: 17px;
+    gap: 20px;
   }
 
   .providers-grid {
@@ -1113,13 +1164,11 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 750px) {
-
   .providers-navbar {
     height: auto;
 
@@ -1155,7 +1204,6 @@
     white-space: nowrap;
   }
 
-
   .providers-hero {
     min-height: 330px;
 
@@ -1170,6 +1218,9 @@
     letter-spacing: -2.5px;
   }
 
+  .providers-hero p {
+    font-size: 14px;
+  }
 
   .providers-search-section {
     margin-top: -25px;
@@ -1178,7 +1229,6 @@
   .providers-search-box {
     grid-template-columns: 1fr;
   }
-
 
   .providers-section {
     padding:
@@ -1197,7 +1247,6 @@
     grid-template-columns: 1fr;
   }
 
-
   .providers-cta {
     padding:
       50px 7%;
@@ -1207,6 +1256,9 @@
     text-align: center;
   }
 
+  .providers-cta h2 {
+    font-size: 25px;
+  }
 
   .providers-footer {
     grid-template-columns:
@@ -1216,12 +1268,27 @@
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 500px) {
+  .providers-navbar {
+    gap: 10px;
+  }
+
+  .providers-logo {
+    font-size: 19px;
+  }
+
+  .providers-logo-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+  }
 
   .providers-nav-buttons {
     gap: 5px;
@@ -1243,18 +1310,25 @@
     font-size: 39px;
   }
 
+  .providers-hero p {
+    font-size: 13px;
+  }
+
   .provider-details {
     gap: 4px;
   }
-}
 
+  .providers-cta {
+    padding:
+      45px 6%;
+  }
+}
 
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .providers-hero h1 span,
   .availability-dot,
   .provider-loader {
@@ -1265,7 +1339,8 @@
   .provider-book-btn,
   .providers-customer-btn,
   .providers-login-btn,
-  .providers-cta a {
+  .providers-cta a,
+  .providers-logo-icon {
     transition: none;
   }
 }
