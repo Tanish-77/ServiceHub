@@ -56,14 +56,15 @@
 .providers-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.8px;
 
   color: #0f0c0a;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .providers-logo > span > span {
@@ -88,7 +89,7 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 12px;
+  border-radius: 13px;
 
   color: white;
   font-size: 19px;
@@ -103,11 +104,14 @@
   box-shadow:
     0 0 30px rgba(124, 58, 237, 0.3);
 
-  transition: transform 0.3s ease;
+   transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+
 .providers-logo:hover .providers-logo-icon {
-  transform: rotate(-5deg) scale(1.05);
+  transform: rotate(-6deg) scale(1.1) translateY(-2px);;
+  box-shadow:
+    0 0 50px rgba(34, 211, 238, 0.35);
 }
 
 /* =========================================================
@@ -127,11 +131,11 @@
   color: #4a3f38;
 
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  letter-spacing: 0.2px;
+
+  transition: color 0.3s ease;
 }
 
 .providers-nav-links a::after {
@@ -139,10 +143,10 @@
 
   position: absolute;
   left: 50%;
-  bottom: -9px;
+  bottom: -7px;
 
   width: 0;
-  height: 2px;
+  height: 2.5px;
 
   transform: translateX(-50%);
 
@@ -155,7 +159,10 @@
       #22d3ee
     );
 
-  transition: width 0.3s ease;
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.5);
+
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .providers-nav-links a:hover,
