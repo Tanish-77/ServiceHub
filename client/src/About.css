@@ -2,16 +2,20 @@
    SERVICEHUB — ABOUT PAGE
    HOME / PROVIDERS PREMIUM LIGHT THEME
 ========================================================= */
-
+* {
+  box-sizing: border-box;
+}
 .about-page {
   min-height: 100vh;
   background: #e6dfd8;
   color: #0f0c0a;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.about-page *,
+/* .about-page *,
 .about-page *::before,
 .about-page *::after {
   box-sizing: border-box;
@@ -19,7 +23,7 @@
 
 .about-page a {
   text-decoration: none;
-}
+} */
 
 /* =========================================================
    NAVBAR
@@ -28,27 +32,29 @@
 .about-navbar {
   height: 76px;
   padding: 0 5%;
-  background: rgba(154, 186, 182, 0.96);
-  backdrop-filter: blur(26px);
-  -webkit-backdrop-filter: blur(26px);
-  border-bottom: 1px solid rgba(80, 68, 58, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #9abab6;
+  backdrop-filter: blur(26px) saturate(1.3);
+  -webkit-backdrop-filter: blur(26px) saturate(1.3);
+  border-bottom: 1px solid rgba(80, 68, 58, 0.08);
+  transition: background 0.4s ease;
 }
 
 .about-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
+  gap: 12px;
   color: #0f0c0a;
-  font-size: 20px;
+  text-decoration: none;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.8px;
+  cursor: pointer;
 }
 
 .about-logo > span > span {
@@ -61,14 +67,19 @@
 .about-logo-icon {
   width: 38px;
   height: 38px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #7c3aed, #06b6d4);
-  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.20);
+  border-radius: 13px;
+  color: white;
+  font-size: 19px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.3);
+  transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.about-logo:hover .about-logo-icon {
+  transform: rotate(-6deg) scale(1.1) translateY(-2px);
+  box-shadow: 0 0 50px rgba(34, 211, 238, 0.35);
 }
 
 /* =========================================================
@@ -78,43 +89,42 @@
 .about-nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 34px;
 }
 
 .about-nav-links a {
   position: relative;
-  display: inline-block;
-  padding: 8px 0;
-  color: #3d342e;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.25s ease, transform 0.25s ease;
+  color: #4a3f38;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease;
 }
-
-.about-nav-links a:hover {
-  color: #0f0c0a;
-  transform: translateY(-1px);
-}
-
-.about-nav-links a.active {
-  color: #0f0c0a;
-}
-
-/* EXACT ACTIVE UNDERLINE */
-
-.about-nav-links a.active::after {
+.about-nav-links a::after {
   content: "";
   position: absolute;
   left: 50%;
-  right: auto;
-  bottom: -9px;
-  width: 100%;
-  height: 2px;
+  bottom: -7px;
+  width: 0;
+  height: 2.5px;
   transform: translateX(-50%);
   border-radius: 10px;
   background: linear-gradient(90deg, #7c3aed, #22d3ee);
-  box-shadow: 0 0 8px rgba(124, 58, 237, 0.18);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+
+.about-nav-links a.active,
+.about-nav-links a.hover {
+  color: #0f0c0a;
+}
+.about-nav-links a:hover::after,
+.about-nav-links a.active::after {
+  width: 80%;
+}
+/* EXACT ACTIVE UNDERLINE */
 
 /* =========================================================
    NAV BUTTONS
@@ -122,28 +132,35 @@
 
 .about-nav-buttons {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .about-customer-btn,
 .about-login-btn {
-  padding: 11px 19px;
-  border-radius: 9px;
-  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 12.5px;
   font-weight: 700;
-  transition: transform 0.25s ease, box-shadow 0.25s ease,
-    background 0.25s ease;
+  letter-spacing: 0.2px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border: none;
 }
 
 .about-customer-btn {
   color: #6d28d9;
-  background: rgba(124, 58, 237, 0.08);
-  border: 1px solid rgba(124, 58, 237, 0.15);
+  border: 1.5px solid rgba(124, 58, 237, 0.25);
+  background: rgba(124, 58, 237, 0.06);
 }
 
 .about-customer-btn:hover {
+  color: #4c1d95;
+  background: rgba(124, 58, 237, 0.14);
   transform: translateY(-2px);
-  background: rgba(124, 58, 237, 0.13);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 .about-login-btn {
@@ -154,8 +171,8 @@
 }
 
 .about-login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.25);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 45px rgba(34, 211, 238, 0.3);
 }
 
 /* =========================================================
@@ -953,7 +970,7 @@
 
 @media (max-width: 1000px) {
   .about-nav-links {
-    gap: 16px;
+    gap: 20px;
   }
 
   .about-intro {
@@ -1011,15 +1028,16 @@
   .about-nav-links {
     order: 3;
     width: 100%;
+    justify-content: flex-start;
     overflow-x: auto;
-    justify-content: center;
-    gap: 16px;
-    padding-bottom: 4px;
+    gap: 22px;
+    padding-bottom: 8px;
+    scrollbar-width: none;
   }
 
   .about-nav-links a {
     white-space: nowrap;
-    font-size: 11px;
+   
   }
 
   .about-nav-links a.active::after {
