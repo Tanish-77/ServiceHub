@@ -172,7 +172,7 @@
 
 .providers-nav-links a:hover::after,
 .providers-nav-links a.active::after {
-  width: 100%;
+  width: 80%;
 }
 
 /* =========================================================
@@ -182,24 +182,24 @@
 .providers-nav-buttons {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
 }
 
 .providers-customer-btn,
 .providers-login-btn {
   text-decoration: none;
 
-  padding: 10px 18px;
+  padding: 10px 22px;
 
-  border-radius: 11px;
+  border-radius: 12px;
 
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border: none;
 }
 
 .providers-customer-btn {
