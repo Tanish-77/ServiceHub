@@ -1,4 +1,5 @@
-viceHub/* =========================================================
+viceHub
+/* =========================================================
    SERVICEHUB — PREMIUM MARKETPLACE (ELEVATED NEUTRAL)
 ========================================================= */
 
@@ -49,7 +50,6 @@ viceHub/* =========================================================
   display: flex;
   align-items: center;
   gap: 12px;
-
   font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.8px;
@@ -60,12 +60,10 @@ viceHub/* =========================================================
   text-decoration: none;
 }
 
-.home-logo > span > span {
-  background: linear-gradient(
-    135deg,
-    #7c3aed,
-    #22d3ee
-  );
+.home-logo>span>span {
+  background: linear-gradient(135deg,
+      #7c3aed,
+      #22d3ee);
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -86,11 +84,9 @@ viceHub/* =========================================================
   font-size: 19px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #7c3aed,
-      #06b6d4
-    );
+      #06b6d4);
 
   box-shadow:
     0 0 35px rgba(124, 58, 237, 0.3);
@@ -118,42 +114,28 @@ viceHub/* =========================================================
 
 .nav-links a {
   position: relative;
-
   text-decoration: none;
-
   color: #4a3f38;
-
   font-size: 13.5px;
   font-weight: 500;
   letter-spacing: 0.2px;
-
   transition: color 0.3s ease;
 }
 
 .nav-links a::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -7px;
-
   width: 0;
   height: 2.5px;
-
   transform: translateX(-50%);
-
   border-radius: 10px;
-
-  background: linear-gradient(
-    90deg,
-    #7c3aed,
-    #22d3ee
-  );
-
+  background: linear-gradient(90deg,
+      #7c3aed,
+      #22d3ee);
   box-shadow:
     0 0 20px rgba(34, 211, 238, 0.5);
-
   transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -197,37 +179,25 @@ viceHub/* =========================================================
 
 .login-btn {
   color: #6d28d9;
-
   border: 1.5px solid rgba(124, 58, 237, 0.25);
-
   background: rgba(124, 58, 237, 0.06);
 }
 
 .login-btn:hover {
   color: #4c1d95;
-
   background: rgba(124, 58, 237, 0.14);
-
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 30px rgba(124, 58, 237, 0.12);
-
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
   border-color: rgba(124, 58, 237, 0.4);
 }
 
 .get-started-btn {
   color: white;
-
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #7c3aed,
-      #06b6d4
-    );
-
-  box-shadow:
-    0 8px 30px rgba(124, 58, 237, 0.3);
+      #06b6d4);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
 }
 
 .get-started-btn:hover {
@@ -244,28 +214,19 @@ viceHub/* =========================================================
 
 .hero-section {
   min-height: 650px;
-
   padding: 80px 5% 60px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   position: relative;
-
   overflow: hidden;
-
   background:
-    radial-gradient(
-      circle at 72% 22%,
+    radial-gradient(circle at 72% 22%,
       rgba(124, 58, 237, 0.07),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 22% 78%,
+      transparent 35%),
+    radial-gradient(circle at 22% 78%,
       rgba(34, 211, 238, 0.05),
-      transparent 30%
-    ),
+      transparent 30%),
     #e6dfd8;
 }
 
@@ -274,37 +235,23 @@ viceHub/* =========================================================
 
 .hero-section::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background-image:
-    linear-gradient(
+    linear-gradient(rgba(60, 48, 40, 0.04) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
       rgba(60, 48, 40, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(60, 48, 40, 0.04) 1px,
-      transparent 1px
-    );
-
+      transparent 1px);
   background-size: 60px 60px;
-
   mask-image:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.2),
-      transparent 70%
-    );
-
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      transparent 70%);
   -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.2),
-      transparent 70%
-    );
-
+    linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.2),
+      transparent 70%);
   pointer-events: none;
 }
 
@@ -325,11 +272,9 @@ viceHub/* =========================================================
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      circle,
+    radial-gradient(circle,
       rgba(124, 58, 237, 0.12),
-      transparent 70%
-    );
+      transparent 70%);
 
   filter: blur(40px);
 
@@ -394,11 +339,9 @@ viceHub/* =========================================================
   height: 2.5px;
 
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       #7c3aed,
-      #22d3ee
-    );
+      #22d3ee);
 
   box-shadow:
     0 0 15px rgba(34, 211, 238, 0.5);
@@ -423,12 +366,10 @@ viceHub/* =========================================================
 
 .hero-content h1 span {
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       #7c3aed,
       #22d3ee,
-      #7c3aed
-    );
+      #7c3aed);
 
   background-size: 200% auto;
 
@@ -553,11 +494,9 @@ viceHub/* =========================================================
   cursor: pointer;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #7c3aed,
-      #06b6d4
-    );
+      #06b6d4);
 
   box-shadow:
     0 8px 30px rgba(124, 58, 237, 0.35);
@@ -583,12 +522,10 @@ viceHub/* =========================================================
   height: 100%;
 
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       transparent,
       rgba(255, 255, 255, 0.25),
-      transparent
-    );
+      transparent);
 
   transform: skewX(-25deg);
 
@@ -706,13 +643,11 @@ viceHub/* =========================================================
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      circle at 35% 30%,
+    radial-gradient(circle at 35% 30%,
       rgba(124, 58, 237, 0.15),
       rgba(79, 70, 229, 0.07) 42%,
       rgba(6, 182, 212, 0.05) 65%,
-      transparent 72%
-    );
+      transparent 72%);
 
   border:
     1.5px solid rgba(124, 58, 237, 0.08);
@@ -725,6 +660,7 @@ viceHub/* =========================================================
 }
 
 @keyframes mainOrb {
+
   0%,
   100% {
     transform: scale(1);
@@ -753,15 +689,14 @@ viceHub/* =========================================================
   font-size: 200px;
 
   filter:
-    drop-shadow(
-      0 30px 40px rgba(28, 23, 20, 0.08)
-    );
+    drop-shadow(0 30px 40px rgba(28, 23, 20, 0.08));
 
   animation:
     providerFloat 5s ease-in-out infinite;
 }
 
 @keyframes providerFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -810,8 +745,7 @@ viceHub/* =========================================================
 
 .floating-icon:hover {
   transform:
-    scale(1.15)
-    rotate(-7deg);
+    scale(1.15) rotate(-7deg);
 
   border-color:
     rgba(34, 211, 238, 0.25);
@@ -853,6 +787,7 @@ viceHub/* =========================================================
 }
 
 @keyframes floatA {
+
   0%,
   100% {
     transform: translateY(0);
@@ -864,6 +799,7 @@ viceHub/* =========================================================
 }
 
 @keyframes floatB {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
@@ -892,11 +828,9 @@ viceHub/* =========================================================
   margin: 0;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #b3987e,
-      #805e3b
-    );
+      #805e3b);
 
   border-radius: 0;
 }
@@ -905,7 +839,7 @@ viceHub/* =========================================================
   text-align: center;
 
   margin-bottom: 55px;
- 
+
 }
 
 .section-heading h2 {
@@ -1024,22 +958,20 @@ viceHub/* =========================================================
    FRONT
 ========================================================= */
 .service-front {
-  background: linear-gradient(
-       135deg,
-    #f2ede8,
-    #e8e2db,
-    #ded7cf,
-    #e8e2db
-  );
+  background: linear-gradient(135deg,
+      #f2ede8,
+      #e8e2db,
+      #ded7cf,
+      #e8e2db);
 
   background-size: 300% 300%;
 
   animation: cardGradient 6s ease infinite;
 
-  border: 1.5px solid  rgba(80, 68, 58, 0.06);
+  border: 1.5px solid rgba(80, 68, 58, 0.06);
 
   transform: rotateY(0deg) translateZ(1px);
-   box-shadow:
+  box-shadow:
     0 16px 40px rgba(28, 23, 20, 0.04);
 }
 
@@ -1049,13 +981,11 @@ viceHub/* =========================================================
 ========================================================= */
 
 .service-back {
-  background: linear-gradient(
-    135deg,
-    #ded7cf,
-    #e8e2db,
-    #f2ede8,
-    #ded7cf
-  );
+  background: linear-gradient(135deg,
+      #ded7cf,
+      #e8e2db,
+      #f2ede8,
+      #ded7cf);
 
   background-size: 300% 300%;
 
@@ -1064,7 +994,7 @@ viceHub/* =========================================================
   border: 1.5px solid rgba(80, 68, 58, 0.06);
 
   transform: rotateY(180deg) translateZ(1px);
-    box-shadow:
+  box-shadow:
     0 16px 40px rgba(28, 23, 20, 0.04);
 }
 
@@ -1091,33 +1021,27 @@ viceHub/* =========================================================
    DIFFERENT CARD TIMING
 ========================================================= */
 
-.service-card:nth-child(1)
-.service-card-inner {
+.service-card:nth-child(1) .service-card-inner {
   animation-delay: 0s;
 }
 
-.service-card:nth-child(2)
-.service-card-inner {
+.service-card:nth-child(2) .service-card-inner {
   animation-delay: -1.6s;
 }
 
-.service-card:nth-child(3)
-.service-card-inner {
+.service-card:nth-child(3) .service-card-inner {
   animation-delay: -3.2s;
 }
 
-.service-card:nth-child(4)
-.service-card-inner {
+.service-card:nth-child(4) .service-card-inner {
   animation-delay: -4.8s;
 }
 
-.service-card:nth-child(5)
-.service-card-inner {
+.service-card:nth-child(5) .service-card-inner {
   animation-delay: -6.4s;
 }
 
-.service-card:nth-child(6)
-.service-card-inner {
+.service-card:nth-child(6) .service-card-inner {
   animation-delay: -8s;
 }
 
@@ -1135,11 +1059,9 @@ viceHub/* =========================================================
   border-radius: 50%;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #f2ede8,
-      #e8e2db
-    );
+      #e8e2db);
 
   display: flex;
 
@@ -1235,8 +1157,7 @@ viceHub/* =========================================================
   color: #4c1d95;
 
   transform:
-    translateZ(2px)
-    translateX(5px);
+    translateZ(2px) translateX(5px);
 }
 
 
@@ -1270,8 +1191,7 @@ viceHub/* =========================================================
 }
 
 
-.service-card:hover
-.service-face::before {
+.service-card:hover .service-face::before {
 
   transform:
     scale(2.4);
@@ -1291,12 +1211,10 @@ viceHub/* =========================================================
   inset: 0;
 
   background:
-    linear-gradient(
-      120deg,
+    linear-gradient(120deg,
       transparent 35%,
       rgba(255, 255, 255, 0.45),
-      transparent 65%
-    );
+      transparent 65%);
 
   transform:
     translateX(-120%);
@@ -1310,8 +1228,7 @@ viceHub/* =========================================================
 }
 
 
-.service-card:hover
-.service-face::after {
+.service-card:hover .service-face::after {
 
   transform:
     translateX(120%);
@@ -1373,16 +1290,12 @@ viceHub/* =========================================================
   border-radius: 32px;
 
   background:
-    radial-gradient(
-      circle at 20% 20%,
+    radial-gradient(circle at 20% 20%,
       rgba(124, 58, 237, 0.04),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
+      transparent 30%),
+    radial-gradient(circle at 80% 80%,
       rgba(6, 182, 212, 0.03),
-      transparent 30%
-    ),
+      transparent 30%),
     #e0d9d1;
 
   border:
@@ -1418,20 +1331,35 @@ viceHub/* =========================================================
 }
 
 /* Different delays for each card */
-.why-card:nth-child(1) { animation-delay: 0s; }
-.why-card:nth-child(2) { animation-delay: 0.6s; }
-.why-card:nth-child(3) { animation-delay: 1.2s; }
-.why-card:nth-child(4) { animation-delay: 1.8s; }
+.why-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.why-card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.why-card:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+.why-card:nth-child(4) {
+  animation-delay: 1.8s;
+}
 
 @keyframes cardFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
     box-shadow: 0 10px 30px rgba(28, 23, 20, 0.02);
   }
+
   30% {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 20px 50px rgba(28, 23, 20, 0.04);
   }
+
   60% {
     transform: translateY(-3px) scale(1.005);
     box-shadow: 0 15px 40px rgba(28, 23, 20, 0.03);
@@ -1485,17 +1413,31 @@ viceHub/* =========================================================
   animation: iconPulse 2.5s ease-in-out infinite;
 }
 
-.why-card:nth-child(1) .why-icon { animation-delay: 0s; }
-.why-card:nth-child(2) .why-icon { animation-delay: 0.4s; }
-.why-card:nth-child(3) .why-icon { animation-delay: 0.8s; }
-.why-card:nth-child(4) .why-icon { animation-delay: 1.2s; }
+.why-card:nth-child(1) .why-icon {
+  animation-delay: 0s;
+}
+
+.why-card:nth-child(2) .why-icon {
+  animation-delay: 0.4s;
+}
+
+.why-card:nth-child(3) .why-icon {
+  animation-delay: 0.8s;
+}
+
+.why-card:nth-child(4) .why-icon {
+  animation-delay: 1.2s;
+}
 
 @keyframes iconPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     background: rgba(124, 58, 237, 0.06);
     border-color: rgba(124, 58, 237, 0.08);
   }
+
   50% {
     transform: scale(1.08);
     background: rgba(124, 58, 237, 0.1);
@@ -1508,8 +1450,7 @@ viceHub/* =========================================================
   animation-play-state: paused;
   color: #06b6d4;
   transform:
-    rotate(-8deg)
-    scale(1.15) !important;
+    rotate(-8deg) scale(1.15) !important;
 
   box-shadow:
     0 0 40px rgba(34, 211, 238, 0.08);
@@ -1588,11 +1529,9 @@ viceHub/* =========================================================
   font-weight: 900;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #7c3aed,
-      #06b6d4
-    );
+      #06b6d4);
 
   box-shadow:
     0 0 25px rgba(124, 58, 237, 0.3);
@@ -1615,11 +1554,9 @@ viceHub/* =========================================================
   color: #0f0c0a;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       rgba(124, 58, 237, 0.04),
-      rgba(34, 211, 238, 0.03)
-    );
+      rgba(34, 211, 238, 0.03));
 
   border:
     1.5px solid rgba(124, 58, 237, 0.06);
@@ -1631,8 +1568,7 @@ viceHub/* =========================================================
 
 .step:hover .step-icon {
   transform:
-    scale(1.12)
-    rotate(-6deg);
+    scale(1.12) rotate(-6deg);
 
   box-shadow:
     0 0 40px rgba(124, 58, 237, 0.06);
@@ -1666,6 +1602,7 @@ viceHub/* =========================================================
 }
 
 @keyframes arrowGlow {
+
   0%,
   100% {
     opacity: 0.3;
@@ -1700,17 +1637,13 @@ viceHub/* =========================================================
   color: white;
 
   background:
-    radial-gradient(
-      circle at 80% 50%,
+    radial-gradient(circle at 80% 50%,
       rgba(34, 211, 238, 0.2),
-      transparent 25%
-    ),
-    linear-gradient(
-      110deg,
+      transparent 25%),
+    linear-gradient(110deg,
       #6d28d9,
       #7c3aed,
-      #0891b2
-    );
+      #0891b2);
 }
 
 .cta-section::before {
@@ -1792,8 +1725,7 @@ viceHub/* =========================================================
 
 .cta-section a:hover {
   transform:
-    translateY(-6px)
-    scale(1.04);
+    translateY(-6px) scale(1.04);
 
   box-shadow:
     0 24px 50px rgba(0, 0, 0, 0.18);
@@ -1911,18 +1843,15 @@ viceHub/* =========================================================
   color: white;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #7c3aed,
-      #0891b2
-    );
+      #0891b2);
 
   border-color:
     transparent;
 
   transform:
-    translateY(-5px)
-    rotate(-6deg);
+    translateY(-5px) rotate(-6deg);
 
   box-shadow:
     0 0 30px rgba(124, 58, 237, 0.12);
@@ -2036,8 +1965,7 @@ viceHub/* =========================================================
     min-height: auto;
 
     padding:
-      65px 5%
-      30px;
+      65px 5% 30px;
 
     flex-direction: column;
 
@@ -2297,6 +2225,7 @@ viceHub/* =========================================================
     transition-duration: 0.01ms !important;
   }
 }
+
 @keyframes cardGradient {
   0% {
     background-position: 0% 50%;
